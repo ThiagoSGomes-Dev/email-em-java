@@ -1,6 +1,11 @@
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * @version 1.0.0
+ * @author Thiago S Gomes
+ * @since 10/03/2024
+ */
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
