@@ -5,6 +5,9 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Informe o email: ");
+        String email = scanner.nextLine();
+
         System.out.print("Informe o assunto do email: ");
         String subject = scanner.nextLine();
 
@@ -12,26 +15,25 @@ public class App {
         String body = scanner.nextLine();
 
         // Criando assinantes
-        EmailSubscriber subscriber1 = new EmailSubscriber("email1@example.com");
-
-        EmailSubscriber subscriber2 = new EmailSubscriber("email2@example.com");
+        EmailSubscriber subscribers = new EmailSubscriber(email);
 
         // Criando um sistema de email marketing
         EmailMarketingSystem emailMarketingSystem = new EmailMarketingSystem();
 
         // Adicionando assinantes ao sistema
-        emailMarketingSystem.addSubscriber(subscriber1);
-        emailMarketingSystem.addSubscriber(subscriber2);
+        emailMarketingSystem.addSubscriber(subscribers);
 
         // Criando e enviando um email
-        Email email = new Email(subject, body);
+        Email emails = new Email(email, subject, body);
 
-        emailMarketingSystem.sendEmail(email);
+        emailMarketingSystem.sendEmail(emails);
 
         // Verificando os emails enviados
         List<Email> sentEmails = emailMarketingSystem.getSentEmails();
         System.out.println("Emails enviados:");
         for (Email sentEmail : sentEmails) {
+            
+            System.out.println("Email: " + sentEmail.getEmail());
             System.out.println("Assunto: " + sentEmail.getSubject());
             System.out.println("Corpo: " + sentEmail.getBody());
             System.out.println("------------");
