@@ -32,12 +32,14 @@ public class App {
         List<Email> sentEmails = emailMarketingSystem.getSentEmails();
         System.out.println("Emails enviados:");
         for (Email sentEmail : sentEmails) {
-            
+
             System.out.println("Email: " + sentEmail.getEmail());
             System.out.println("Assunto: " + sentEmail.getSubject());
             System.out.println("Corpo: " + sentEmail.getBody());
             System.out.println("------------");
         }
+
+        scanner.close();
     }
 }
 
