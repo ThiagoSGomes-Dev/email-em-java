@@ -17,8 +17,8 @@ class EmailMarketingSystem {
     public void sendEmail(Email email) {
         for (EmailSubscriber subscriber : subscribers) {
             // Simulação de envio de email para cada assinante
-            System.out.println("Enviando email para: " + subscriber.getEmail());
             System.out.println("\n");
+            System.out.println("Enviando email para: " + subscriber.getEmail());
             System.out.println("Assunto: " + email.getEmail());
             System.out.println("Assunto: " + email.getSubject());
             System.out.println("Corpo: " + email.getBody());
